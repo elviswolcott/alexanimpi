@@ -49,6 +49,3 @@ while(True):
         else:
             print("You lost.");
         print("Quit the program");
-        while(True):
-            a = 1;
-            #loop out
