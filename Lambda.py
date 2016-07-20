@@ -1,5 +1,5 @@
 """
-Based of the color example provided by Amazon.
+Based off of the color example provided by Amazon.
 Nim code for gameplay created by Elvis Wolcott.
 """
 
