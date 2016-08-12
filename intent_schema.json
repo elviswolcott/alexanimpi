@@ -1,0 +1,96 @@
+{
+  "intents": [
+    {
+      "intent": "SetMoveIntent",
+      "slots": [
+        {
+          "name": "Selection",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Amount",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "ReduceMoveIntent",
+      "slots": [
+        {
+          "name": "Selection",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Amount",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "ReduceAmountIntent",
+      "slots": [
+        {
+          "name": "Amount",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "SetAmountIntent",
+      "slots": [
+        {
+          "name": "Amount",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "SelectIntent",
+      "slots": [
+        {
+          "name": "Selection",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "NewIntent"
+    },
+    {
+      "intent": "ChangeSettingsIntent"
+    },
+    {
+      "intent": "InstructionsIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.RepeatIntent"
+    },
+    {
+      "intent": "AMAZON.StartOverIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.ResumeIntent"
+    },
+    {
+      "intent": "AMAZON.NextIntent"
+    },
+    {
+      "intent": "AMAZON.PreviousIntent"
+    }
+  ]
+}
