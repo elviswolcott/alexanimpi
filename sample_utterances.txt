@@ -1,0 +1,183 @@
+ChangeSettingsIntent Make it so I can win
+ChangeSettingsIntent Stop winning
+ChangeSettingsIntent You're too good
+ChangeSettingsIntent I'm tired of losing
+ChangeSettingsIntent I quit
+ChangeSettingsIntent This is unfair
+ChangeSettingsIntent This is no fun
+ChangeSettingsIntent Stop it
+ChangeSettingsIntent I can't stand this
+ChangeSettingsIntent This is a bad game
+ChangeSettingsIntent I don't like this game
+ChangeSettingsIntent This is impossible
+ChangeSettingsIntent Make it easier
+ChangeSettingsIntent Let me win
+ChangeSettingsIntent I give up
+ChangeSettingsIntent You're too good
+ChangeSettingsIntent You're too smart
+
+ReduceMoveIntent Take {Amount} from {Selection}
+ReduceMoveIntent Remove {Amount} from {Selection}
+ReduceMoveIntent Subtract {Amount} from {Selection}
+ReduceMoveIntent Take away {Amount} from {Selection}
+ReduceMoveIntent Take {Amount} from group {Selection}
+ReduceMoveIntent Remove {Amount} from group {Selection}
+ReduceMoveIntent Subtract {Amount} from group {Selection}
+ReduceMoveIntent Take away {Amount} from group {Selection}
+ReduceMoveIntent Take {Amount} from pile {Selection}
+ReduceMoveIntent Remove {Amount} from pile {Selection}
+ReduceMoveIntent Subtract {Amount} from pile {Selection}
+ReduceMoveIntent Take away {Amount} from pile {Selection}
+ReduceMoveIntent Take {Amount} from row {Selection}
+ReduceMoveIntent Remove {Amount} from row {Selection}
+ReduceMoveIntent Subtract {Amount} from row {Selection}
+ReduceMoveIntent Take away {Amount} from row {Selection}
+ReduceMoveIntent Take {Amount} from column {Selection}
+ReduceMoveIntent Remove {Amount} from column {Selection}
+ReduceMoveIntent Subtract {Amount} from column {Selection}
+ReduceMoveIntent Take away {Amount} from column {Selection}
+
+SetMoveIntent Make {Selection} {Amount}
+SetMoveIntent Make {Selection} become {Amount}
+SetMoveIntent Make {Selection} into {Amount}
+SetMoveIntent Turn {Selection} into {Amount}
+SetMoveIntent Set {Selection} to {Amount}
+SetMoveIntent Make group {Selection} {Amount}
+SetMoveIntent Make group {Selection} become {Amount}
+SetMoveIntent Make group {Selection} into {Amount}
+SetMoveIntent Turn group {Selection} into {Amount}
+SetMoveIntent Set group {Selection} to {Amount}
+SetMoveIntent Make pile {Selection} {Amount}
+SetMoveIntent Make pile {Selection} become {Amount}
+SetMoveIntent Make pile {Selection} into {Amount}
+SetMoveIntent Turn pile {Selection} into {Amount}
+SetMoveIntent Set pile {Selection} to {Amount}
+SetMoveIntent Make row {Selection} {Amount}
+SetMoveIntent Make row {Selection} become {Amount}
+SetMoveIntent Make row {Selection} into {Amount}
+SetMoveIntent Turn row {Selection} into {Amount}
+SetMoveIntent Set row {Selection} to {Amount}
+SetMoveIntent Make column {Selection} {Amount}
+SetMoveIntent Make column {Selection} become {Amount}
+SetMoveIntent Make column {Selection} into {Amount}
+SetMoveIntent Turn column {Selection} into {Amount}
+SetMoveIntent Set column {Selection} to {Amount}
+
+ReduceAmountIntent Take {Amount} from it
+ReduceAmountIntent Remove {Amount} from it
+ReduceAmountIntent Subtract {Amount} from it
+ReduceAmountIntent Take away {Amount} from it
+ReduceAmountIntent Take {Amount} from the pile
+ReduceAmountIntent Remove {Amount} from the pile
+ReduceAmountIntent Subtract {Amount} from the pile
+ReduceAmountIntent Take away {Amount} from the pile
+ReduceAmountIntent Take {Amount} from that
+ReduceAmountIntent Remove {Amount} from that
+ReduceAmountIntent Subtract {Amount} from that
+ReduceAmountIntent Take away {Amount} from that
+ReduceAmountIntent Take {Amount} from that pile
+ReduceAmountIntent Remove {Amount} from that pile
+ReduceAmountIntent Subtract {Amount} from that pile
+ReduceAmountIntent Take away {Amount} from that pile
+ReduceAmountIntent Take {Amount} from that group
+ReduceAmountIntent Remove {Amount} from that group
+ReduceAmountIntent Subtract {Amount} from that group
+ReduceAmountIntent Take away {Amount} from that group
+ReduceAmountIntent Take {Amount} from the group
+ReduceAmountIntent Remove {Amount} from the group
+ReduceAmountIntent Subtract {Amount} from the group
+ReduceAmountIntent Take away {Amount} from the group
+ReduceAmountIntent Take away {Amount}
+ReduceAmountIntent Subtract {Amount}
+ReduceAmountIntent Remove {Amount}
+ReduceAmountIntent Take {Amount}
+ReduceAmountIntent Take {Amount} away
+ReduceAmountIntent Take {Amount} away from it
+ReduceAmountIntent Take {Amount} away from that
+ReduceAmountIntent Take {Amount} away from that pile
+ReduceAmountIntent Take {Amount} away from that group
+ReduceAmountIntent Take {Amount} away from the pile
+ReduceAmountIntent Take {Amount} away from the group
+
+SetAmountIntent Make it {Amount}
+SetAmountIntent Make it become {Amount}
+SetAmountIntent Make it into {Amount}
+SetAmountIntent Turn it into {Amount}
+SetAmountIntent Set it to {Amount}
+SetAmountIntent Turn into {Amount}
+SetAmountIntent Set to {Amount}
+
+SelectIntent Choose pile {Selection}
+SelectIntent Select pile {Selection}
+SelectIntent Take pile {Selection}
+SelectIntent Pick pile {Selection}
+SelectIntent Choose group {Selection}
+SelectIntent Select group {Selection}
+SelectIntent Take group {Selection}
+SelectIntent Pick group {Selection}
+SelectIntent Choose row {Selection}
+SelectIntent Select row {Selection}
+SelectIntent Take row {Selection}
+SelectIntent Pick row {Selection}
+SelectIntent Choose column {Selection}
+SelectIntent Select column {Selection}
+SelectIntent Take column {Selection}
+SelectIntent Pick column {Selection}
+SelectIntent Take from {Selection}
+SelectIntent Take it from {Selection}
+SelectIntent Take away from {Selection}
+SelectIntent Take it away from {Selection}
+SelectIntent From {Selection}
+SelectIntent From pile {Selection}
+SelectIntent From group {Selection}
+SelectIntent From row {Selection}
+SelectIntent From column {Selection}
+SelectIntent Away from {Selection}
+SelectIntent Away from pile {Selection}
+SelectIntent Away from group {Selection}
+SelectIntent Away from row {Selection}
+SelectIntent Away from column {Selection}
+
+
+NewIntent Play again
+NewIntent Rematch
+NewIntent New game
+NewIntent Start
+NewIntent Play me again
+NewIntent Start a new game
+NewIntent Rematch me
+NewIntent Play a new game
+NewIntent I want a rematch
+NewIntent I want to rematch you
+NewIntent I want you to rematch
+NewIntent I want you to rematch me
+NewIntent I want to play again
+NewIntent I want you to play again
+NewIntent I want you to play me again
+NewIntent I want to start a new game
+NewIntent I want you to start a new game
+
+InstructionsIntent Instructions
+InstructionsIntent Tell me the instructions
+InstructionsIntent How to play
+InstructionsIntent How do I play
+InstructionsIntent Teach me how to play
+InstructionsIntent Teach me to play
+InstructionsIntent Teach me how
+InstructionsIntent Tell me how to play
+InstructionsIntent Show me how to play
+InstructionsIntent Tell me the rules
+InstructionsIntent Show me the rules
+InstructionsIntent Explain the rules
+InstructionsIntent Explain the rules to me
+InstructionsIntent Explain how to play
+InstructionsIntent Explain how I play
+InstructionsIntent Explain the instructions
+InstructionsIntent Show me the instructions
+InstructionsIntent Tell me the instructions
+InstructionsIntent Teach me
+InstructionsIntent I don't know how to play
+InstructionsIntent I don't know the rules
+InstructionsIntent Open instructions
+InstructionsIntent Open the instructions
+InstructionsIntent Start instructions
