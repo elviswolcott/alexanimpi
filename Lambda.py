@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     if event['session']['new']:
         event['session']['attributes'] = build_attributes(None, None, None, None, 3, 5, 6, None, None)
     if event['request']['type'] == "LaunchRequest":
-        return simple_response({}, "Start", "This is the game of nim, tell me to start a game or ask for instructions", "Try saying tell me how to play nim", False)
+        return simple_response(build_attributes(None, None, None, None, 3, 5, 6, None, None), "Start", "This is the game of nim, tell me to start a game or ask for instructions", "Try saying tell me how to play nim", False)
     elif event['request']['type'] == "IntentRequest":
         return intent_dispatcher(event['request']['intent'], event['session'])
     elif event['request']['type'] == "SessionEndedRequest":
