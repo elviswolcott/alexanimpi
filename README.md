@@ -1,2 +1,2 @@
-# AlexaNim
-Code for Alexa to play nim, made for the contest on Hackster.io
+# AlexaNimPi
+Upgraded Alexa skill to play nim and display on LEDs
