@@ -181,3 +181,15 @@ InstructionsIntent I don't know the rules
 InstructionsIntent Open instructions
 InstructionsIntent Open the instructions
 InstructionsIntent Start instructions
+
+SetAccountIntent The account is {ID}
+SetAccountIntent The account number is {ID}
+SetAccountIntent The account ID is {ID}
+SetAccountIntent Send it to {ID}
+SetAccountIntent Send it to account {ID}
+SetAccountIntent My account is {ID}
+SetAccountIntent My account number is {ID}
+SetAccountIntent My account ID is {ID}
+SetAccountIntent My number is {ID}
+SetAccountIntent The email ends in {ID}
+SetAccountIntent The key is {ID}
