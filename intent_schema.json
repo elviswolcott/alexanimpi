@@ -54,6 +54,15 @@
       ]
     },
     {
+      "intent": "SetAccount",
+      "slots": [
+        {
+          "name": "ID",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
       "intent": "NewIntent"
     },
     {
