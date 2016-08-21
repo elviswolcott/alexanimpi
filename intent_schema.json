@@ -54,7 +54,7 @@
       ]
     },
     {
-      "intent": "SetAccount",
+      "intent": "SetAccountIntent",
       "slots": [
         {
           "name": "ID",
