@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 
 #equivalent of main()
 def lambda_handler(event, context):
-    if (event['session']['application']['applicationId'] != ""):
+    if (event['session']['application']['applicationId'] != "amzn1.ask.skill.8aa5defe-18b9-4d76-822c-f6b24c2c8287"):
         raise ValueError("Invalid Application ID") #weed out requests from other skills
 
     if event['session']['new']:
@@ -166,8 +166,8 @@ def intent_dispatcher(intent, session):
         return simple_response(build_attributes(session['attributes']['type'], session['attributes']['lastIntent'], session['attributes']['amount'], session['attributes']['selection'], session['attributes']['state'][0], session['attributes']['state'][1], session['attributes']['state'][2], session['attributes']['difficulty'], "None", session['attributes']['email']), "Resumed", "You resumed the game, its your turn", "The game is " + session['attributes']['state'][0] + ", " + session['attributes']['state'][1] + ", " + session['attributes']['state'][2] + ".", False)
     elif name == "NewIntent":
         return new_game(session)
-    elif name == "EmailIntent":
-        return simple_response(build_attributes(session['attributes']['type'], session['attributes']['lastIntent'], session['attributes']['amount'], session['attributes']['selection'], session['attributes']['state'][0], session['attributes']['state'][1], session['attributes']['state'][2], session['attributes']['difficulty'], session['attributes']['instruction_point'], "myrpi" + str(intent['slots']['Email']['value']) + "@gmail.com"), "Updated", "I updated the destination to send game info", "It's your turn, keep on playing", False)
+    elif name == "SetAccountIntent":
+        return simple_response(build_attributes(session['attributes']['type'], session['attributes']['lastIntent'], session['attributes']['amount'], session['attributes']['selection'], session['attributes']['state'][0], session['attributes']['state'][1], session['attributes']['state'][2], session['attributes']['difficulty'], session['attributes']['instruction_point'], "myrpi" + str(intent['slots']['ID']['value']) + "@gmail.com"), "Updated", "I updated the destination to send game info", "It's your turn, keep on playing", False)
     else:
         raise ValueError("Invalid intent")
 
@@ -299,10 +299,12 @@ def build_response(session_attributes, speechlet_response):
     }
 
 def simple_response(attributes, title, content, reprompt, should_end, session="None", mid="None"):
+    if session == "None":
+        return build_response(attributes, build_speechlet_response(
+        title, content, reprompt, should_end))
     if mid == "None":
         mid = session['attributes']['state']
-    if session != "None":
-        send_email(session, attributes['state'], mid)
+    send_email(session, attributes['state'], mid)
     return build_response(attributes, build_speechlet_response(
         title, content, reprompt, should_end))
 
