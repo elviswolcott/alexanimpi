@@ -167,7 +167,7 @@ def intent_dispatcher(intent, session):
     elif name == "NewIntent":
         return new_game(session)
     elif name == "SetAccountIntent":
-        return simple_response(build_attributes(session['attributes']['type'], session['attributes']['lastIntent'], session['attributes']['amount'], session['attributes']['selection'], session['attributes']['state'][0], session['attributes']['state'][1], session['attributes']['state'][2], session['attributes']['difficulty'], session['attributes']['instruction_point'], "myrpi" + str(intent['slots']['ID']['value']) + "@gmail.com"), "Updated", "I updated the destination to send game info", "It's your turn, keep on playing", False)
+        return simple_response(build_attributes(session['attributes']['type'], session['attributes']['lastIntent'], session['attributes']['amount'], session['attributes']['selection'], session['attributes']['state'][0], session['attributes']['state'][1], session['attributes']['state'][2], session['attributes']['difficulty'], session['attributes']['instruction_point'], "myrpi" + str(intent['slots']['ID']['value']) + "@gmail.com"), "Updated", "I updated the destination to send game info, continue playing", "It's your turn, keep on playing", False)
     else:
         raise ValueError("Invalid intent")
 
@@ -177,7 +177,7 @@ def send_email(session, game_state, mid_state):
     old_state = session['attributes']['state']
     target_email = session['attributes']['email']
     msg = MIMEMultipart()
-    msg['Subject'] = "alexa nim game " + game_state[0] + " " + game_state[1] + " " + game_state[2] + " " + mid_state[0] + " " + mid_state[1] + " " + mid_state[2] + " " + old_state[0] + " " + old_state[1] + " " + old_state[2] + " " + session['sessionID']
+    msg['Subject'] = "alexa nim game " + str(game_state[0]) + " " + str(game_state[1]) + " " + str(game_state[2]) + " " + str(mid_state[0]) + " " + str(mid_state[1]) + " " + str(mid_state[2]) + " " + str(old_state[0]) + " " + str(old_state[1]) + " " + str(old_state[2]) + " " + str(session['sessionId'])
     msg['From'] = "emailcommanddispatcher@gmail.com"
     msg['To'] = target_email
     body = "This is a message for your Raspberry Pi. You can ignore it."
@@ -213,9 +213,9 @@ def alexa_full_turn(session, game_state):
     game_state_cache = game_state
     game_state = alexa_make_a_move(game_state)
     if game_state != [0, 0, 0]:
-        return simple_response(build_attributes(None, None, None, None, game_state[0], game_state[1], game_state[2], session['attributes']['difficulty'], session['attributes']['instruction_point'], session['attributes']['email'], session, game_state_cache), "Your turn", "I made my move. Now there are " + str(game_state[0]) + ", " + str(game_state[1]) + " and " + str(game_state[2]) + " left.", "There are " + str(game_state[0]) + ", " + str(game_state[1]) + " and " + str(game_state[2]) + " left. Make a move.", False)
+        return simple_response(build_attributes(None, None, None, None, game_state[0], game_state[1], game_state[2], session['attributes']['difficulty'], session['attributes']['instruction_point'], session['attributes']['email']), "Your turn", "I made my move. Now there are " + str(game_state[0]) + ", " + str(game_state[1]) + " and " + str(game_state[2]) + " left.", "There are " + str(game_state[0]) + ", " + str(game_state[1]) + " and " + str(game_state[2]) + " left. Make a move.", False, session, game_state_cache)
     else:
-        return simple_response(build_attributes(None, None, None, None, 0, 0, 0, session['attributes']['difficulty'], session['attributes']['instruction_point'], session['attributes']['email'], session, game_state_cache), "Game over", "You lost this time. Would you like to play again?", "Would you like to play again?", False)
+        return simple_response(build_attributes(None, None, None, None, 0, 0, 0, session['attributes']['difficulty'], session['attributes']['instruction_point'], session['attributes']['email']), "Game over", "You lost this time. Would you like to play again?", "Would you like to play again?", False, session, game_state_cache)
 
 def selection_present(session):
     return session['attributes']['selection'] != "None"
@@ -244,7 +244,7 @@ def new_game(session):
         a = 3
         b = 5
         c = 6
-    return simple_response(build_attributes(None, None, None, None, a, b, c, session['attributes']['difficulty'], session['attributes']['instruction_point'], session['attributes']['email'], session), "Your turn", "This is a new game. The game is " + str(a) + ", " + str(b) + ", " + str(c) + ".", "The game is " + str(a) + ", " + str(b) + ", " + str(c) + ". Make a move.", False)
+    return simple_response(build_attributes(None, None, None, None, a, b, c, session['attributes']['difficulty'], session['attributes']['instruction_point'], session['attributes']['email']), "Your turn", "This is a new game. The game is " + str(a) + ", " + str(b) + ", " + str(c) + ".", "The game is " + str(a) + ", " + str(b) + ", " + str(c) + ". Make a move.", False)
 
 def keep_attributes(session):
     return build_attributes(session['attributes']['type'], session['attributes']['lastIntent'], session['attributes']['amount'], session['attributes']['selection'], session['attributes']['state'][0], session['attributes']['state'][1], session['attributes']['state'][2], session['attributes']['difficulty'], session['attributes']['instruction_point'], session['attributes']['email'])
@@ -304,7 +304,8 @@ def simple_response(attributes, title, content, reprompt, should_end, session="N
         title, content, reprompt, should_end))
     if mid == "None":
         mid = session['attributes']['state']
-    send_email(session, attributes['state'], mid)
+    if session['attributes']['email'] != "None":
+        send_email(session, attributes['state'], mid)
     return build_response(attributes, build_speechlet_response(
         title, content, reprompt, should_end))
 
